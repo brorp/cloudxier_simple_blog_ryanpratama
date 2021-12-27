@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input[type="text"] {
+  background-color : #F1F1F1;
+  border-color: #FFFFFF;
+  border-width: 1px;
+  height: 50px 
+}
+
+textarea#exampleTextarea {
+  background-color : #F1F1F1;
+  border-color: #FFFFFF;
+  border-width: 1px; 
+  resize: none;
+  height: 300px;  
+}
+
+.icon {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  text-align: right;
+  font-size: 28px
+}
+.btn-org {
+  background-color: #E69E33;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  width: 200px;
+}
+
+.btn-cancel {
+  background-color: #838382;
+  width: 200px;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.lefttext {
+  text-align: left
+}
+
+img{
+  border-radius: 25px;
+  height: 500px;
+  width: 1000px
+}
+
+.card-img-top{
+  border-radius: 25px;
+}
+
+.card {
+  border: 100px;
+}
+.img-link :hover{
+  transform:scale(1.01);
+}
+
+a:hover {
+  color: gray;
+}

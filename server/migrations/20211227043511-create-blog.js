@@ -17,6 +17,15 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
+      img: {
+        type: Sequelize.STRING
+      },
+      url: {
+        type: Sequelize.STRING
+      },
+      publishedAt: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

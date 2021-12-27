@@ -14,9 +14,45 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Blog.init({
-    author: DataTypes.STRING,
-    title: DataTypes.STRING,
-    description: DataTypes.TEXT
+    author: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Author is required',
+        },
+        notEmpty: {
+          msg: 'Author is required',
+        },
+      },
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Title is required',
+        },
+        notEmpty: {
+          msg: 'Title is required',
+        },
+      },
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Content is required',
+        },
+        notEmpty: {
+          msg: 'Content is required',
+        },
+      },
+    },
+    img: DataTypes.STRING,
+    url: DataTypes.STRING,
+    publishedAt: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Blog',
