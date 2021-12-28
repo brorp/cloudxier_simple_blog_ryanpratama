@@ -3,7 +3,10 @@ const {Blog} = require('../models/index')
 class Controller {
     static async getBlog(req,res,next){
         try {
-            const response = await Blog.findAll()
+            const response = await Blog.findAll({
+                order: [
+                ['createdAt', 'DESC']]
+            })
             res.status(200).json(response)
         } catch (err) {
             next(err)

@@ -1,8 +1,9 @@
 import Navbar from '../Components/Navbar'
 import {Link} from 'react-router-dom'
-import {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import {useState, useEffect} from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+
 export default function Form(){
     const [formInput, setFormInput] = useState({
         title: '',
@@ -17,6 +18,7 @@ export default function Form(){
             [field]: value
         })
     }
+    const {id} = useParams()
     const [error, setError] = useState('')
     const [buttonClicked, setButtonClicked] = useState(false);
     const navigate = useNavigate()
@@ -26,7 +28,7 @@ export default function Form(){
         try {
             await axios({
                 method: "POST",
-                url: 'http://localhost:3000/add',
+                url: `http://localhost:3000/edit/${id}`,
                 data: formInput
             })
             navigate('/')
@@ -36,6 +38,22 @@ export default function Form(){
             setButtonClicked(false)
         }
     }
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: `http://localhost:3000/blogs/${id}`
+        })
+        .then(res => {
+            setFormInput({
+                title: res.data.title,
+                author: res.data.author,
+                description: res.data.description,
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
     return (
     <>
     <Navbar/>
@@ -56,7 +74,6 @@ export default function Form(){
                             <input 
                             type="text" 
                             className="form-control mb-3" 
-                            placeholder="Title for your blog"
                             name="title"
                             value={formInput.title}
                             onChange={changeFormInput} />
@@ -64,7 +81,6 @@ export default function Form(){
                             <input 
                             type="text" 
                             className="form-control mb-3" 
-                            placeholder="Author of your blog" 
                             name="author"
                             value={formInput.author}
                             onChange={changeFormInput}/>
@@ -73,7 +89,6 @@ export default function Form(){
                             type="text"
                             className="form-control"
                             id="exampleTextarea"
-                            placeholder="Put description of your article"
                             name="description"
                             value={formInput.description}
                             onChange={changeFormInput}/>

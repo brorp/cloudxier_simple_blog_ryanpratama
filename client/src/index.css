@@ -34,6 +34,15 @@ textarea#exampleTextarea {
   text-align: right;
   font-size: 28px
 }
+
+.icon-url {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  text-align: right;
+  font-size: 16px
+}
+
 .btn-org {
   background-color: #E69E33;
   border: none;
@@ -62,6 +71,10 @@ textarea#exampleTextarea {
 
 .lefttext {
   text-align: left
+}
+
+.righttext {
+  text-align: right
 }
 
 img{
