@@ -11,7 +11,7 @@ export default function Form(){
     })
     const changeFormInput = (e) => {
         const value = e.target.value;
-        const field = e.target.name;
+        const field = e.target.name;  
         setFormInput({
             ...formInput,
             [field]: value
@@ -32,7 +32,7 @@ export default function Form(){
             navigate('/')
         } catch (error) {
             console.log(error)
-            setError(error?.response?.data?.message)
+            setError(error?.response?.data?.error)
             setButtonClicked(false)
         }
     }

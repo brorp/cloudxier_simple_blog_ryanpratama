@@ -5,7 +5,7 @@ class Controller {
         try {
             const response = await Blog.findAll({
                 order: [
-                ['createdAt', 'DESC']]
+                ['updatedAt', 'DESC']]
             })
             res.status(200).json(response)
         } catch (err) {

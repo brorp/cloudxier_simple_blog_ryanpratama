@@ -15,7 +15,7 @@ app.use(express.json())
 app.get('/blogs', Controller.getBlog)
 app.get('/blogs/:id', Controller.getById)
 app.post('/add', Controller.addBlog)
-app.put('/edit/:id', Controller.updateBlog)
+app.post('/edit/:id', Controller.updateBlog)
 app.delete('/delete/:id', Controller.deleteBlog)
 
 app.use(errorHandler)

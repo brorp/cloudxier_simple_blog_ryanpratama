@@ -34,7 +34,7 @@ export default function Form(){
             navigate('/')
         } catch (error) {
             console.log(error)
-            setError(error?.response?.data?.message)
+            setError(error?.response?.data?.error)
             setButtonClicked(false)
         }
     }
@@ -62,7 +62,7 @@ export default function Form(){
             <div className="col-sm-10 col-md-8 col-lg-6 mt-3">
                 <div className="shadow-lg rounded">
                     <div className="card">
-                    <h1 className="mt-3 p-3">Create New Blog Post</h1>
+                    <h1 className="mt-3 p-3">Edit Post</h1>
                         <div className="card-body p-5">
                         {error?.length !== 0 ? (
                         <div className="alert alert-danger alert-dismissible" role="alert">
